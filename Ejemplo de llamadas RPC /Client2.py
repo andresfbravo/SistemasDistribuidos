@@ -6,7 +6,7 @@ import sys
 import threading
 import xmlrpclib
 import time
-
+"""
 def div(x, y):
 	return x // y
 	
@@ -25,14 +25,14 @@ class ServerThread(threading.Thread):
 server = ServerThread()
 server.start() # The server is now running
 print "Listo servidor."
-
+"""
 class ClientThread(threading.Thread):
     def __init__(self):
 		threading.Thread.__init__(self)
-		self.s = xmlrpclib.ServerProxy('http://localhost:10009')
+		self.s = xmlrpclib.ServerProxy('http://localhost:9997')
 
     def run(self):
-		time.sleep(3)
+		#time.sleep(3)
 		print "Llamada cliente"
 		print self.s.div(5,2)  # Returns 5//2 = 2
          

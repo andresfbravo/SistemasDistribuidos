@@ -16,7 +16,7 @@ class SimpleThreadedXMLRPCServer(SocketServer.ThreadingMixIn, SimpleXMLRPCServer
 class ServerThread(threading.Thread):
     def __init__(self):
          threading.Thread.__init__(self)
-         self.localServer = SimpleThreadedXMLRPCServer(("localhost",10009))
+         self.localServer = SimpleThreadedXMLRPCServer(("localhost",9997))
          self.localServer.register_function(div) 
 
     def run(self):
@@ -25,7 +25,7 @@ class ServerThread(threading.Thread):
 server = ServerThread()
 server.start() # The server is now running
 print "Listo servidor."
-
+"""
 class ClientThread(threading.Thread):
     def __init__(self):
 		threading.Thread.__init__(self)
@@ -38,11 +38,4 @@ class ClientThread(threading.Thread):
          
 client = ClientThread()
 client.start() # The server is now running
-
-
-
-
-
-    
-
-
+"""
